@@ -1,0 +1,50 @@
+@import '../../responsive.scss';
+
+.listPage {
+    display: flex;
+    height: 100%;
+
+    .listContainer {
+        flex: 3;
+        height: 100%;
+        padding-right: 10px;
+    
+        .wrapper{
+          height: 100%;
+          padding-right: 50px;
+          display: flex;
+          flex-direction: column;
+          gap: 50px;
+          overflow-y: scroll;
+          padding-bottom: 50px;
+        }
+      }
+      .mapContainer {
+        flex: 2;
+        height: 100%;
+        padding-left: 8px;
+        background-color: #fcf5f3;
+    
+        @include md{
+          display: none;
+        }
+      }
+
+    // .listContainer {
+    //     display: flex;
+    //     flex-direction: column;
+    
+    //     .wrapper {
+    //       display: grid;
+    //       grid-template-columns: repeat(2, 1fr); /* Two cards per row */
+    //       gap: 20px; /* Space between cards */
+    //       padding: 20px;
+    //       overflow-y: scroll;
+    
+    //       @media (max-width: 768px) {
+    //         grid-template-columns: 1fr; /* Single card per row on smaller screens */
+    //       }
+    //     }
+    //   }
+
+}
