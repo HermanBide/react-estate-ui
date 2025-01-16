@@ -1,13 +1,30 @@
 import "./navbar.scss";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { IoCloseSharp } from "react-icons/io5";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+import { AuthContext } from "../../context/AuthContext";
+// import apiRequest from "../../lib/apiRequest";
+// import { useNavigate } from "react-router-dom";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [hover, setHover] = useState(false);
 
-  const user = false;
+  const {currentUser, updateUser} = useContext(AuthContext)
+
+  // const navigate = useNavigate();
+
+  // const handleLogout = async () => {
+  //   try {
+  //     const res = await apiRequest.post("/auth/logout");
+  //     updateUser(null)
+  //     navigate("/");
+  //     console.log(res, "logged out");
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
 
   return (
     <nav className="nav">
@@ -26,26 +43,28 @@ function Navbar() {
       {/* RIGHT SIDE */}
       <div className="right">
 
-        {user ? (
+        {currentUser ? (
           <div className="user">
             <img
-              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              src={currentUser.avatar || "/noavatar.jpg"}
               alt=""
             />
-            <span>John Doe</span>
+            <span>{currentUser.username}</span>
             <Link to="/profile" className="profile">
               <div className="notification">3</div>
               <span>Profile</span>
             </Link>
+
+            {/* <button className="logout" onClick={handleLogout}>logout</button> */}
           </div>
         ) : (
           <>
-            <a href="/" className="login">
+            <Link to="/login" className="login">
               Sign in
-            </a>
-            <a href="/" className="register">
+            </Link>
+            <Link to="/register" className="register">
               Sign up
-            </a>
+            </Link>
           </>
         )}
 

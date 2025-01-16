@@ -14,3 +14,7 @@ body {
     overflow: hidden;
     font-family: "Lato", sans-serif;
 }
+
+button {
+    pointer-events: auto; 
+}

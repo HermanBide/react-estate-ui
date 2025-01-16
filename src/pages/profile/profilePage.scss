@@ -7,6 +7,15 @@
   @include md{
     flex-direction: column;
     overflow: scroll;
+
+      /* Remove scrollbar outline */
+      &::-webkit-scrollbar {
+        width: 0px;
+        height: 0px;
+    }
+
+    /* Disable scrollbar for Firefox */
+    scrollbar-width: none; 
   }
 
   .details {
@@ -57,6 +66,19 @@
           display: flex;
           align-items: center;
           gap: 20px;
+        }
+
+        button{
+          width: 100px;
+          background-color: #fb8500;
+          border: none;
+          border-radius: 6px;
+          padding: 6px;
+          cursor: pointer;
+          &:hover {
+            scale: 1.02;
+          }
+          transition: all 0.2s ease;
         }
 
         img{

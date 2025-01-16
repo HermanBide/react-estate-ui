@@ -5,6 +5,12 @@ import "./slider.scss";
 function Slider({ images }) {
   const [imageIndex, setImageIndex] = useState(null);
 
+  if (!images || !Array.isArray(images) || images.length === 0) {
+    return <div>No images to display</div>;
+  }
+
+  console.log(images, "IMAGES FROM SLIDE")
+
   const changeSlide = (direction) => {
     if (direction === "left") {
       if (imageIndex === 0) {

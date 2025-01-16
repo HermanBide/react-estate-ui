@@ -1,7 +1,13 @@
+import { useContext } from 'react';
 import SearchBar from '../../components/searchBar/searchBar'
 import './homePage.scss'
-function homePage() {
-  return (
+import { AuthContext } from '../../context/AuthContext.jsx';
+
+function HomePage() {
+
+  const { currentUser } = useContext(AuthContext); 
+
+  return ( 
     <div className="homePage">
       <div className="textContainer">
         <div className="wrapper">
@@ -37,4 +43,4 @@ function homePage() {
   );
 }
 
-export default homePage;
+export default HomePage;

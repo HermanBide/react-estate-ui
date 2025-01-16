@@ -9,6 +9,15 @@
       flex-direction: column;
       gap: 20px;
       overflow-y: scroll;
+
+            /* Remove scrollbar outline */
+        &::-webkit-scrollbar {
+          width: 0px;
+          height: 0px;
+      }
+
+      /* Disable scrollbar for Firefox */
+      scrollbar-width: none; 
   
       h1 {
         font-weight: 300;

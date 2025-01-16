@@ -62,7 +62,6 @@ nav {
         a {
             padding: 12px 24px;
             margin: 20px;
-
         }
 
         .user{
@@ -80,9 +79,15 @@ nav {
 
             button {
                 padding: 12px 24px;
-                background-color: #e9d8a6;
+                background-color: #fb8500;
                 cursor: pointer;
                 border: none;
+                border-radius: 8px;
+
+                &:hover{
+                    transform: scale(1.03);
+                    transition: all 0.1s ease;
+                }
 
             }
 
@@ -98,6 +103,12 @@ nav {
                 cursor: pointer;
                 border: none;
                 position: relative;
+                border-radius: 8px;
+                &:hover{
+                    transform: scale(1.03);
+                    transition: all 0.1s ease;
+                }
+
                 
                 .notification{
                   position: absolute;
@@ -119,6 +130,20 @@ nav {
         .register {
             background-color: #2a9d8f;
             border-radius: 10px;
+            cursor: pointer;
+
+
+            // &:hover{
+            //     transform: scale(1.02);
+            // transition: all 0.2s ease;
+            // }
+        }
+
+        .login{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
         }
 
         .menuIcon {

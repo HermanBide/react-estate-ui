@@ -17,6 +17,15 @@
           gap: 50px;
           overflow-y: scroll;
           padding-bottom: 50px;
+
+            /* Remove scrollbar outline */
+            &::-webkit-scrollbar {
+              width: 0px;
+              height: 0px;
+          }
+
+          /* Disable scrollbar for Firefox */
+          scrollbar-width: none; 
         }
       }
       .mapContainer {

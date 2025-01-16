@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './card.scss'
-function card({item}) {
+function Card({item}) {
   return (
     <div className="card">
      <Link to={`/${item.id}`} className="imageContainer">
@@ -40,4 +40,4 @@ function card({item}) {
   )
 }
 
-export default card
+export default Card

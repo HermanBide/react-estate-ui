@@ -4,6 +4,12 @@ import "leaflet/dist/leaflet.css";
 import Pin from '../pin/pin';
 
 function Map({items}){
+
+  if (!items || items.length === 0) {
+    return <div>No map items available</div>;
+  }
+
+  console.log(items, "MAP ITEMS LOG")
   return (
     <MapContainer center={[37.8044, -122.2712]} zoom={13} scrollWheelZoom={false} className='map'>
     <TileLayer
